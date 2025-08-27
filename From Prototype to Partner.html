@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en" class="scroll-smooth"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;CAI Civic Engine: Reporter Feedback Infographic&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Chosen Palette: Energetic &amp; Playful --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Narrative &amp; Structure Plan: The infographic tells a story, starting with a high-level hook: the core problem ("The Tyranny of Time") and the ultimate value proposition ("The Second-Day Story on the First Day"). It then breaks down the five foundational needs discovered during research. The centerpiece is a data visualization of the product priorities, making the report's actionable insights immediately clear. The narrative then adds qualitative depth by introducing the "Reporter Personas" and their unique insights. It concludes by visualizing the ideal human-AI workflow, cementing the theme of partnership. This structure guides the user from the "what" to the "why" and finally to the "how." --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Visualization &amp; Content Choices:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Key Takeaways: Goal=Inform. Method=Large stat cards (HTML/Tailwind). Justification=Provides a high-impact, scannable summary of the report's core findings. No SVG.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- 5 Core Needs: Goal=Organize. Method=Icon-based grid (Unicode characters + HTML/Tailwind). Justification=Breaks down the main themes into digestible, visually distinct categories. No SVG.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Product Priorities: Goal=Compare/Rank. Method=Horizontal Bar Chart (Chart.js/Canvas). Justification=The most effective way to visually represent the ranked priority levels from the report's data table, allowing for quick comparison. No SVG.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Reporter Personas: Goal=Compare/Inform. Method=Three-column card layout (HTML/Tailwind). Justification=Clearly separates and presents the unique qualitative insights from each interviewee. No SVG.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>- Workflow Diagram: Goal=Organize/Show Process. Method=Flowchart (Styled HTML/Tailwind divs and borders). Justification=Visually explains the ideal human-in-the-loop process without using SVG or Mermaid JS, reinforcing the "co-creation" theme.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8fafc;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chart-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-left: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 450px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 60vh;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.chart-container {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>height: 550px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gradient-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(to right, #118AB2, #06D6A0);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="text-slate-700"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto p-4 md:p-8"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Header Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="text-center my-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-4xl md:text-6xl font-extrabold text-slate-800 tracking-tight"&gt;From Prototype to Partner&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto"&gt;Synthesizing reporter feedback to build the future of the &lt;span class="font-bold text-[#073B4C]"&gt;CAI Civic Engine&lt;/span&gt;, a tool designed not to replace journalists, but to empower them.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Core Value Proposition --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="my-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-[#FF6B6B] mb-2"&gt;The Core Problem&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-4xl font-extrabold text-slate-800"&gt;The Tyranny of Time&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-4 text-slate-600"&gt;Reporters spend up to &lt;strong class="text-[#073B4C]"&gt;5 hours&lt;/strong&gt; covering a single civic meeting, bogged down by the "drudgery" of stenography. This leaves little time for the real work of journalism: investigation and analysis.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-[#073B4C] text-white p-8 rounded-2xl shadow-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-[#FFD166] mb-2"&gt;The Ultimate Goal&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-4xl font-extrabold"&gt;A Second-Day Story on the First Day&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-4 text-slate-200"&gt;By automating mechanical tasks, the Civic Engine liberates journalists to produce deep, analytical work immediately, transforming their workflow and increasing the impact of their reporting.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 5 Convergent Needs --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="my-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-center text-slate-800 mb-4"&gt;Five Foundational Needs for a Newsroom AI&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-center text-lg text-slate-600 max-w-2xl mx-auto mb-12"&gt;Across all interviews, five universal themes emerged as non-negotiable requirements for any AI tool to succeed in a journalistic environment.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-md border border-slate-200/80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl"&gt;⏱️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="mt-4 font-bold text-lg text-[#118AB2]"&gt;Time Liberation&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-sm text-slate-600"&gt;Free reporters from low-value stenography to focus on high-impact investigation.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-md border border-slate-200/80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl"&gt;✅&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="mt-4 font-bold text-lg text-[#118AB2]"&gt;Absolute Verifiability&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-sm text-slate-600"&gt;Every AI-generated fact must link directly to its source with one-click transparency.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-md border border-slate-200/80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl"&gt;💎&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="mt-4 font-bold text-lg text-[#118AB2]"&gt;Narrative "Nugget"&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-sm text-slate-600"&gt;Go beyond summary to help find the story: the tension, the conflict, the "spicy" quote.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-md border border-slate-200/80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl"&gt;📚&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="mt-4 font-bold text-lg text-[#118AB2]"&gt;Contextual Knowledge&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-sm text-slate-600"&gt;Bridge the "context gap" by connecting current events to a deep, verifiable knowledge base.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-md border border-slate-200/80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl"&gt;🧑‍⚖️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="mt-4 font-bold text-lg text-[#118AB2]"&gt;Journalist as Arbiter&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-sm text-slate-600"&gt;The tool must be a flexible "workbench" where the human has final editorial control.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Product Priorities Chart --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="my-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-center text-slate-800 mb-4"&gt;Actionable Roadmap: Prioritizing Development&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-center text-lg text-slate-600 max-w-3xl mx-auto mb-12"&gt;Reporter feedback translates directly into a product roadmap. This chart visualizes the priority of key features, from foundational "must-haves" to strategic enhancements, based on the urgency of user needs.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-white p-4 sm:p-8 rounded-2xl shadow-lg border border-slate-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="chart-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;canvas id="prioritiesChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Reporter Personas --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="my-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-center text-slate-800 mb-4"&gt;Distinctive Insights from the Field&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-center text-lg text-slate-600 max-w-2xl mx-auto mb-12"&gt;Beyond common themes, each reporter brought a unique perspective that challenges assumptions and reveals novel opportunities for the Civic Engine.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-md border border-slate-200/80 flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold text-[#073B4C]"&gt;Sam Mintz&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-[#118AB2] mb-4"&gt;The AI-Native Reporter&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-600 flex-grow"&gt;His feedback highlighted the critical "first mile" problem of ingesting messy, real-world data and a desire for a conversational interface to issue editorial commands like "find a spicier quote."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-md border border-slate-200/80 flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold text-[#073B4C]"&gt;Bruce Mohl&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-[#118AB2] mb-4"&gt;The Veteran Investigator&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-600 flex-grow"&gt;He emphasized the importance of reporting on "what doesn't happen" (e.g., a tabled vote) and the need for the AI to analyze subtext, tension, and unverified claims, not just transcribe official statements.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl shadow-md border border-slate-200/80 flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold text-[#073B4C]"&gt;Anne Galloway&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-[#118AB2] mb-4"&gt;The Newsroom Leader&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-600 flex-grow"&gt;She provided the strategic vision, framing the tool's value as enabling "second-day stories on day one" and expanding its scope from a meeting tool to a comprehensive "Beat Intelligence Platform."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Workflow Diagram --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="my-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-center text-slate-800 mb-4"&gt;The Ideal Workflow: A Human-AI Partnership&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-center text-lg text-slate-600 max-w-2xl mx-auto mb-12"&gt;Reporters don't want an automated author; they want a powerful assistant. The ideal workflow is a collaborative process where the AI handles the mechanical work and the journalist provides the final analysis, narrative, and editorial judgment.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-4 md:gap-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-full md:w-1/4 bg-white p-4 rounded-lg shadow-md border text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl mb-2"&gt;🤖&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="font-bold text-[#118AB2]"&gt;AI: Ingest &amp; Analyze&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-600 mt-1"&gt;Handles messy data, transcribes, summarizes votes, and flags key moments.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center justify-center h-16 md:h-auto md:w-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-0.5 h-full md:w-full md:h-0.5 bg-slate-300"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-full md:w-1/4 bg-white p-4 rounded-lg shadow-md border text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl mb-2"&gt;🔍&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="font-bold text-[#118AB2]"&gt;Journalist: Query &amp; Verify&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-600 mt-1"&gt;Prompts for insights, verifies key facts, and identifies the core narrative "nugget."&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center justify-center h-16 md:h-auto md:w-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-0.5 h-full md:w-full md:h-0.5 bg-slate-300"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-full md:w-1/4 bg-white p-4 rounded-lg shadow-md border text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-3xl mb-2"&gt;✍️&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="font-bold text-[#118AB2]"&gt;Journalist: Author &amp; Publish&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-600 mt-1"&gt;Writes the final story, adding context, analysis, and their unique voice, maintaining full control.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const wrapLabel = (label, maxWidth) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const words = label.split(' ');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const lines = [];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let currentLine = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>words.forEach(word =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if ((currentLine + word).length &gt; maxWidth) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>lines.push(currentLine.trim());</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>currentLine = '';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>currentLine += word + ' ';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lines.push(currentLine.trim());</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return lines;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const rawLabels = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'Absolute Verifiability',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'Time Liberation for Deeper Reporting',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'"First Mile" Data Ingestion',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'Contextual Knowledge Base',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'Finding the Narrative "Nugget"',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'Associated Document Integration',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'Reporting on Inaction ("Negative Space")',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'AI as a Critical Sparring Partner',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'Flexible "Workbench" UX',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'AI Usage Disclosure Strategy'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const chartData = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>labels: rawLabels.map(label =&gt; wrapLabel(label, 16)),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>label: 'Priority Level',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>data: [10, 10, 9, 9, 8, 7, 7, 6, 6, 4],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>backgroundColor: [</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'#073B4C', '#073B4C',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'#118AB2', '#118AB2',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'#06D6A0',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'#FFD166', '#FFD166',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'#FF6B6B', '#FF6B6B', '#FF6B6B'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderColor: '#ffffff',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderWidth: 2,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderRadius: 4,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>barPercentage: 0.8,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>categoryPercentage: 0.9</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ctx = document.getElementById('prioritiesChart').getContext('2d');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>new Chart(ctx, {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: 'bar',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>data: chartData,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>indexAxis: 'y',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>x: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>beginAtZero: true,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>max: 10,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>title: {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>display: true,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>text: 'Priority Score (10 = Highest)',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>font: { size: 14, weight: '500' },</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>color: '#475569'</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>grid: { color: '#e2e8f0' },</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ticks: { color: '#64748b' }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>y: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>grid: { display: false },</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ticks: { color: '#334155', font: { weight: '500' } }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>legend: { display: false },</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>tooltip: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>enabled: true,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>backgroundColor: '#073B4C',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>titleFont: { size: 14, weight: 'bold' },</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>bodyFont: { size: 12 },</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>padding: 12,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>boxPadding: 4,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>callbacks: {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>title: function(tooltipItems) {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>const item = tooltipItems[0];</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>let label = item.chart.data.labels[item.dataIndex];</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>if (Array.isArray(label)) {</p>
+<p class="p1"><span class="Apple-converted-space">                                      </span>return label.join(' ');</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                                      </span>return label;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>label: function(context) {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>return `Priority: ${context.formattedValue}`;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
